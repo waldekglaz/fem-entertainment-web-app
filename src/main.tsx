@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Root, Home, Bookmarked, Movies } from "./pages";
+import { Root, Home, Bookmarked, Movies, TvSeries } from "./pages";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "movies", element: <Movies /> },
-      { path: "tv-series", element: <div>Tv</div> },
+      { path: "tv-series", element: <TvSeries /> },
       { path: "bookmarked", element: <Bookmarked /> },
     ],
   },
