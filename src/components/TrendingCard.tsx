@@ -6,6 +6,15 @@ import CategoryMovie from "../assets/icon-category-movie.svg";
 import CategoryTvSeries from "../assets/icon-category-tv.svg";
 import useStore from "../store";
 
+interface TrendingCardProps {
+  bgImage: string;
+  year: number;
+  rating: string;
+  title: string;
+  isBookmarked: boolean;
+  category: string;
+}
+
 function TrendingCard({
   bgImage,
   year,
@@ -13,8 +22,9 @@ function TrendingCard({
   title,
   isBookmarked,
   category,
-}) {
+}: TrendingCardProps) {
   const { toggleBookmarked } = useStore();
+
   return (
     <div
       style={{

@@ -21,6 +21,7 @@
   margin-right: 0;
   margin-left: auto;
   border: transparent;
+  cursor: pointer;
 }
 .categoryIcon {
   margin-left: 14px;

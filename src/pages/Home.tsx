@@ -7,11 +7,21 @@ import "swiper/css";
 function Home() {
   const { movies } = useStore();
   const trendingMovies = movies.filter((movie) => movie.isTrending);
-  console.log(trendingMovies);
+  console.log(movies);
+
   return (
     <PageWrapper>
       <SectionTitle text="Trending" />
-      <Swiper spaceBetween={30} slidesPerView={1.1}>
+      <Swiper
+        spaceBetween={46}
+        slidesPerView={1.2}
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        }}
+      >
         {trendingMovies.map((movie) => (
           <SwiperSlide>
             <TrendingCard
@@ -25,6 +35,7 @@ function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <SectionTitle text="Recomended for you" />
     </PageWrapper>
   );
 }
