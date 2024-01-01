@@ -1,5 +1,5 @@
 import PageWrapper from "../components/PageWrapper";
-import { SectionTitle, TrendingCard } from "../components";
+import { SectionTitle, TrendingCard, StandardCard } from "../components";
 import useStore from "../store";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,7 +7,6 @@ import "swiper/css";
 function Home() {
   const { movies } = useStore();
   const trendingMovies = movies.filter((movie) => movie.isTrending);
-  console.log(movies);
 
   return (
     <PageWrapper>
@@ -17,7 +16,7 @@ function Home() {
         slidesPerView={1.2}
         breakpoints={{
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 4.5,
             spaceBetween: 0,
           },
         }}
@@ -36,6 +35,17 @@ function Home() {
         ))}
       </Swiper>
       <SectionTitle text="Recomended for you" />
+      <div className="card-container">
+        {movies.map((item) => (
+          <StandardCard
+            imgSrc={item.thumbnail.regular.small}
+            title={item.title}
+            isBookmarked={item.isBookmarked}
+            category={item.category}
+            year={item.year}
+          />
+        ))}
+      </div>
     </PageWrapper>
   );
 }

@@ -1,0 +1,29 @@
+.card {
+  width: 136px;
+}
+.cardImageContainer {
+  position: relative;
+}
+.cardImg {
+  width: 100%;
+}
+
+.bookmarked {
+  width: 32px;
+  height: 32px;
+  background-color: #979797;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  margin-left: auto;
+  border: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.icon {
+  width: 12px;
+}
