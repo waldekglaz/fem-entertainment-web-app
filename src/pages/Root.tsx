@@ -1,15 +1,16 @@
-import useStore from '../store'
+import useStore from "../store";
 
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import { Header } from "../components";
 
 function Root() {
-  const { movies } = useStore()
+  const { movies } = useStore();
 
-  const trendingMovies = movies.filter((movie) => movie.isTrending)
+  const trendingMovies = movies.filter((movie) => movie.isTrending);
 
   return (
     <>
-      <p>header</p>
+      <Header />
       <Outlet />
       {/* <h2>Trending</h2>
       {trendingMovies.map((movie) => (
@@ -20,7 +21,7 @@ function Root() {
         <div>{movie.title}</div>
       ))} */}
     </>
-  )
+  );
 }
 
-export default Root
+export default Root;
