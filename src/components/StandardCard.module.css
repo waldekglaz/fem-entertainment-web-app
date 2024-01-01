@@ -1,11 +1,13 @@
 .card {
-  width: 136px;
+  width: 46%;
 }
 .cardImageContainer {
   position: relative;
+  margin-bottom: 8px;
 }
 .cardImg {
   width: 100%;
+  border-radius: 8px 8px 0 0;
 }
 
 .bookmarked {
@@ -21,9 +23,39 @@
   border: transparent;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
 }
 .icon {
   width: 12px;
+}
+.textContent {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .card {
+    width: 30%;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    width: 280px;
+  }
+  .textContent {
+    font-size: 13px;
+  }
+  .title {
+    font-size: 18px;
+  }
 }

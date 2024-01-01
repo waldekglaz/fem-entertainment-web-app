@@ -1,5 +1,6 @@
 .trendingCard {
-  width: 240px;
+  /* width: 200px; */
+  width: 62.5%;
   height: 140px;
   border-radius: 8px;
   background-position: center;
@@ -52,4 +53,17 @@
 
   background-color: rgba(255, 255, 255, 0.15);
   padding: 2px 8px;
+}
+@media (min-width: 1024px) {
+  .trendingCard {
+    width: 470px;
+    height: 230px;
+    padding: 16px 24px 24px;
+  }
+  .textTop {
+    font-size: 15px;
+  }
+  .title {
+    font-size: 24px;
+  }
 }

@@ -12,12 +12,19 @@ function Home() {
     <PageWrapper>
       <SectionTitle text="Trending" />
       <Swiper
-        spaceBetween={46}
+        spaceBetween={16}
         slidesPerView={1.2}
         breakpoints={{
-          1024: {
-            slidesPerView: 4.5,
+          375: {
+            slidesPerView: 1.3,
+            spaceBetween: 8,
+          },
+          768: {
+            slidesPerView: 1.5,
             spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 2.5,
           },
         }}
       >

@@ -22,7 +22,7 @@ function StandardCard({ imgSrc, title, isBookmarked, category, year }) {
           />
         </button>
       </div>
-      <div>
+      <div className={styles.textContent}>
         <span>{year}</span>
         <img
           src={category === "Movie" ? CategoryMovie : CategoryTvSeries}
@@ -31,7 +31,7 @@ function StandardCard({ imgSrc, title, isBookmarked, category, year }) {
         />
         <span>{category}</span>
       </div>
-      <h3>{title}</h3>
+      <h3 className={styles.title}>{title}</h3>
     </div>
   );
 }

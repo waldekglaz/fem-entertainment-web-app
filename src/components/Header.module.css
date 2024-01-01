@@ -16,6 +16,9 @@
 .nav a.active {
   filter: brightness(300%);
 }
+.header > nav > a.active > img {
+  filter: brightness(300%);
+}
 .avatar {
   width: 24px;
   height: 24px;

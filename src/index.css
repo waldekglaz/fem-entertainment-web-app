@@ -12,8 +12,13 @@ body {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 15px;
+}
+@media (min-width: 1024px) {
+  .card-container {
+    gap: 40px;
+  }
 }
 .icon {
   width: 32px;
