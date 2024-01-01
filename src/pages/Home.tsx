@@ -1,5 +1,10 @@
 import PageWrapper from "../components/PageWrapper";
-import { SectionTitle, TrendingCard, StandardCard } from "../components";
+import {
+  SectionTitle,
+  TrendingCard,
+  StandardCard,
+  StandardCardContainer,
+} from "../components";
 import useStore from "../store";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -42,7 +47,7 @@ function Home() {
         ))}
       </Swiper>
       <SectionTitle text="Recomended for you" />
-      <div className="card-container">
+      <StandardCardContainer>
         {movies.map((item) => (
           <StandardCard
             imgSrc={item.thumbnail.regular.small}
@@ -52,7 +57,7 @@ function Home() {
             year={item.year}
           />
         ))}
-      </div>
+      </StandardCardContainer>
     </PageWrapper>
   );
 }
