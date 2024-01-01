@@ -1,23 +1,26 @@
-import useStore from './store'
-import './App.css'
+import useStore from '../store'
 
-function App() {
+import { Outlet } from 'react-router-dom'
+
+function Root() {
   const { movies } = useStore()
 
   const trendingMovies = movies.filter((movie) => movie.isTrending)
 
   return (
     <>
-      <h2>Trending</h2>
+      <p>header</p>
+      <Outlet />
+      {/* <h2>Trending</h2>
       {trendingMovies.map((movie) => (
         <div>{movie.title}</div>
       ))}
       <h2>Recomended for you</h2>
       {movies.map((movie) => (
         <div>{movie.title}</div>
-      ))}
+      ))} */}
     </>
   )
 }
 
-export default App
+export default Root
