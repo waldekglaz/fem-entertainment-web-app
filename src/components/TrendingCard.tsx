@@ -6,29 +6,29 @@ import CategoryMovie from "../assets/icon-category-movie.svg";
 import CategoryTvSeries from "../assets/icon-category-tv.svg";
 import useStore from "../store";
 
-interface TrendingCardProps {
-  bgImage: string;
+export interface CardProps {
+  image: string;
   year: number;
-  rating: string;
+  rating?: string;
   title: string;
   isBookmarked: boolean;
   category: string;
 }
 
 function TrendingCard({
-  bgImage,
+  image,
   year,
   rating,
   title,
   isBookmarked,
   category,
-}: TrendingCardProps) {
+}: CardProps) {
   const { toggleBookmarked } = useStore();
 
   return (
     <div
       style={{
-        backgroundImage: `url(${bgImage})`,
+        backgroundImage: `url(${image})`,
       }}
       className={styles.trendingCard}
     >

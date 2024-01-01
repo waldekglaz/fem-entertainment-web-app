@@ -4,6 +4,7 @@ import TrendingCard from "./TrendingCard";
 import StandardCard from "./StandardCard";
 import StandardCardContainer from "./StandardCardContainer";
 import PageWrapper from "./PageWrapper";
+import NoItems from "./NoItems";
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   StandardCard,
   StandardCardContainer,
   PageWrapper,
+  NoItems,
 };

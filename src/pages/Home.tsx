@@ -36,7 +36,7 @@ function Home() {
         {trendingMovies.map((movie) => (
           <SwiperSlide>
             <TrendingCard
-              bgImage={movie.thumbnail.trending.small}
+              image={movie.thumbnail.trending.small}
               year={movie.year}
               rating={movie.rating}
               title={movie.title}
@@ -50,7 +50,7 @@ function Home() {
       <StandardCardContainer>
         {movies.map((item) => (
           <StandardCard
-            imgSrc={item.thumbnail.regular.small}
+            image={item.thumbnail.regular.small}
             title={item.title}
             isBookmarked={item.isBookmarked}
             category={item.category}

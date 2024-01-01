@@ -17,7 +17,7 @@ function Movies() {
       <StandardCardContainer>
         {tvSeriesOnly.map((item) => (
           <StandardCard
-            imgSrc={item.thumbnail.regular.small}
+            image={item.thumbnail.regular.small}
             title={item.title}
             isBookmarked={item.isBookmarked}
             category={item.category}
