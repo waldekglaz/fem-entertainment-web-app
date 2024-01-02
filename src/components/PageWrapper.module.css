@@ -1,6 +1,18 @@
 .pageWrapper {
   background-color: #10141e;
-  padding: 26px 16px 61px;
+  padding: 82px 16px 61px;
   color: #fff;
   min-height: 90vh;
+}
+
+@media (min-width: 768px) {
+  .pageWrapper {
+    padding: 82px 25px 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageWrapper {
+    padding: 82px 36px 52px;
+  }
 }

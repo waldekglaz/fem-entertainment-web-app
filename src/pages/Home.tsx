@@ -1,38 +1,59 @@
-import PageWrapper from "../components/PageWrapper";
+import { useState, ChangeEvent } from 'react'
+import PageWrapper from '../components/PageWrapper'
 import {
   SectionTitle,
   TrendingCard,
   StandardCard,
   StandardCardContainer,
-} from "../components";
-import useStore from "../store";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+  Search,
+} from '../components'
+import useStore from '../store'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import { Movie } from '../store'
 
 function Home() {
-  const { movies } = useStore();
-  const trendingMovies = movies.filter((movie) => movie.isTrending);
+  const { movies } = useStore()
+  const trendingMovies = movies.filter((movie) => movie.isTrending)
+
+  const [userInput, setUserInput] = useState('')
+
+  const [searchedMovies, setSearchedMovies] = useState<Movie[]>([])
+
+  const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value
+    setUserInput(inputValue)
+
+    const searchedResults = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(inputValue.toLowerCase()),
+    )
+    setSearchedMovies(searchedResults)
+  }
+
+  const displayedMovies = userInput ? searchedMovies : movies
 
   return (
     <PageWrapper>
+      <Search onChange={onSearch} value={userInput} />
       <SectionTitle text="Trending" />
       <Swiper
-        spaceBetween={16}
-        slidesPerView={1.2}
+        slidesPerView={1.6}
         breakpoints={{
           375: {
-            slidesPerView: 1.3,
+            slidesPerView: 1.6,
             spaceBetween: 8,
           },
           768: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.3,
             spaceBetween: 0,
           },
           1024: {
+            slidesPerView: 1.7,
+          },
+          1440: {
             slidesPerView: 2.5,
           },
-        }}
-      >
+        }}>
         {trendingMovies.map((movie) => (
           <SwiperSlide>
             <TrendingCard
@@ -48,7 +69,7 @@ function Home() {
       </Swiper>
       <SectionTitle text="Recomended for you" />
       <StandardCardContainer>
-        {movies.map((item) => (
+        {displayedMovies.map((item) => (
           <StandardCard
             image={item.thumbnail.regular.small}
             title={item.title}
@@ -59,7 +80,7 @@ function Home() {
         ))}
       </StandardCardContainer>
     </PageWrapper>
-  );
+  )
 }
 
-export default Home;
+export default Home

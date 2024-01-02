@@ -1,28 +1,28 @@
-import { create } from "zustand";
-import jsonData from "./data.json";
+import { create } from 'zustand'
+import jsonData from './data.json'
 
 interface Thumbnail {
-  small: string;
-  medium?: string;
-  large: string;
+  small: string
+  medium?: string
+  large: string
 }
 
-interface Movie {
-  title: string;
+export interface Movie {
+  title: string
   thumbnail: {
-    trending: Thumbnail;
-    regular: Thumbnail;
-  };
-  year: number;
-  category: string;
-  rating: string;
-  isBookmarked: boolean;
-  isTrending: boolean;
+    trending: Thumbnail
+    regular: Thumbnail
+  }
+  year: number
+  category: string
+  rating: string
+  isBookmarked: boolean
+  isTrending: boolean
 }
 
 interface State {
-  movies: Movie[];
-  toggleBookmarked: (movieTitle: string) => void;
+  movies: Movie[]
+  toggleBookmarked: (movieTitle: string) => void
 }
 
 const useStore = create<State>((set) => ({
@@ -32,10 +32,10 @@ const useStore = create<State>((set) => ({
       movies: state.movies.map((movie: Movie) =>
         movie.title === movieTitle
           ? { ...movie, isBookmarked: !movie.isBookmarked }
-          : movie
+          : movie,
       ),
-    }));
+    }))
   },
-}));
+}))
 
-export default useStore;
+export default useStore

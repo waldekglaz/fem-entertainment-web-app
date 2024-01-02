@@ -4,6 +4,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .header nav {

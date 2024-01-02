@@ -50,7 +50,7 @@
 }
 @media (min-width: 1024px) {
   .card {
-    width: 280px;
+    width: 20%;
   }
   .textContent {
     font-size: 13px;
