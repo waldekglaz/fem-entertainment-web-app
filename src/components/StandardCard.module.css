@@ -26,6 +26,12 @@
   top: 8px;
   right: 8px;
 }
+.bookmarked:hover {
+  background-color: #fff;
+}
+.bookmarked:hover img {
+  filter: brightness(-300%);
+}
 .icon {
   width: 12px;
 }

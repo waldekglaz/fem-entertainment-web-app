@@ -51,7 +51,12 @@ function Home() {
             slidesPerView: 1.7,
           },
           1440: {
-            slidesPerView: 2.5,
+            slidesPerView: 1.7,
+            spaceBetween: 16,
+          },
+          1920: {
+            slidesPerView: 3.6,
+            spaceBetween: 16,
           },
         }}>
         {trendingMovies.map((movie) => (

@@ -1,10 +1,10 @@
-import React from 'react'
 import SearchIcon from '../assets/icon-search.svg'
 import styles from './Search.module.css'
+import { ChangeEvent } from 'react'
 
 interface SearchProps {
   value: string
-  onChange: any
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 function Search({ value, onChange }: SearchProps) {

@@ -1,27 +1,16 @@
-import useStore from "../store";
-
-import { Outlet } from "react-router-dom";
-import { Header } from "../components";
+import { Outlet } from 'react-router-dom'
+import { Header } from '../components'
+import styles from './Root.module.css'
 
 function Root() {
-  const { movies } = useStore();
-
-  const trendingMovies = movies.filter((movie) => movie.isTrending);
-
   return (
-    <>
+    <main className={styles.main}>
       <Header />
-      <Outlet />
-      {/* <h2>Trending</h2>
-      {trendingMovies.map((movie) => (
-        <div>{movie.title}</div>
-      ))}
-      <h2>Recomended for you</h2>
-      {movies.map((movie) => (
-        <div>{movie.title}</div>
-      ))} */}
-    </>
-  );
+      <div>
+        <Outlet />
+      </div>
+    </main>
+  )
 }
 
-export default Root;
+export default Root

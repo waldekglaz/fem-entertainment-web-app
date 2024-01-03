@@ -24,6 +24,12 @@
   border: transparent;
   cursor: pointer;
 }
+.bookmarked:hover {
+  background-color: #fff;
+}
+.bookmarked:hover img {
+  filter: brightness(-300%);
+}
 .categoryIcon {
   margin-left: 14px;
   margin-right: 6px;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 
 body {
   box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 .card-container {
   display: flex;
@@ -22,4 +22,9 @@ body {
 }
 .icon {
   width: 32px;
+}
+@media (min-width: 1024px) {
+  .swiper-wrapper {
+    width: 100vw !important;
+  }
 }

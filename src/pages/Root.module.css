@@ -1,0 +1,10 @@
+@media (min-width: 1024px) {
+  .main {
+    display: flex;
+    background-color: #10141e;
+    padding: 32px 0 32px 2.5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: hidden;
+  }
+}
