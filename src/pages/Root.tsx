@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom'
 import { Header } from '../components'
-import styles from './Root.module.css'
+
+import { PageWrapper } from '../components'
 
 function Root() {
   return (
-    <main className={styles.main}>
+    <PageWrapper>
       <Header />
-      <div>
-        <Outlet />
-      </div>
-    </main>
+
+      <Outlet />
+    </PageWrapper>
   )
 }
 

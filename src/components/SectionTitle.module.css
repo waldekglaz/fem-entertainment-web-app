@@ -4,13 +4,12 @@
   font-weight: 300;
   margin-bottom: 16px;
   letter-spacing: -0.312px;
-  margin-top: 28px;
+  padding: 28px;
 }
 
 @media (min-width: 1024px) {
   .title {
     font-size: 32px;
     margin-bottom: 32px;
-    margin-top: 40px;
   }
 }

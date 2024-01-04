@@ -3,6 +3,7 @@ import BookmarkFull from '../assets/icon-bookmark-full.svg'
 import BookmarkEmpty from '../assets/icon-bookmark-empty.svg'
 import CategoryMovie from '../assets/icon-category-movie.svg'
 import CategoryTvSeries from '../assets/icon-category-tv.svg'
+import PlayIcon from '../assets/icon-play.svg'
 import useStore from '../store'
 
 export interface CardProps {
@@ -51,6 +52,12 @@ function TrendingCard({
           </div>
         </div>
         <div className={styles.rating}>{rating}</div>
+      </div>
+      <div className={styles.overlay}>
+        <button>
+          <img src={PlayIcon} alt="" />
+          <span>Play</span>
+        </button>
       </div>
     </div>
   )

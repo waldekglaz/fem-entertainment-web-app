@@ -19,7 +19,7 @@
 @media (min-width: 1024px) {
   .search {
     gap: 24px;
-    margin-top: 50px;
+
     width: 70vw;
   }
   .search input {

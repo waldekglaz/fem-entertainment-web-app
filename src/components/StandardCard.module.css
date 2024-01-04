@@ -1,6 +1,12 @@
 .card {
   width: 46%;
 }
+.card:hover {
+  cursor: pointer;
+}
+.card:hover .overlay {
+  display: block;
+}
 .cardImageContainer {
   position: relative;
   margin-bottom: 8px;
@@ -25,6 +31,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  z-index: 100;
 }
 .bookmarked:hover {
   background-color: #fff;
@@ -48,6 +55,35 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+.overlay button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 19px;
+  align-items: center;
+  border-radius: 28.5px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: 18px;
+  padding: 9px 24px 9px 9px;
+  border: none;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .card {

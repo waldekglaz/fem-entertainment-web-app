@@ -3,10 +3,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   font-family: 'Outfit', sans-serif;
 }
 .card-container {
@@ -22,9 +22,4 @@ body {
 }
 .icon {
   width: 32px;
-}
-@media (min-width: 1024px) {
-  .swiper-wrapper {
-    width: 100vw !important;
-  }
 }

@@ -37,12 +37,8 @@ function Home() {
       <Search onChange={onSearch} value={userInput} />
       <SectionTitle text="Trending" />
       <Swiper
-        slidesPerView={1.6}
+        slidesPerView={1.2}
         breakpoints={{
-          375: {
-            slidesPerView: 1.6,
-            spaceBetween: 8,
-          },
           768: {
             slidesPerView: 1.3,
             spaceBetween: 0,
@@ -51,16 +47,15 @@ function Home() {
             slidesPerView: 1.7,
           },
           1440: {
-            slidesPerView: 1.7,
-            spaceBetween: 16,
+            slidesPerView: 2.9,
           },
           1920: {
-            slidesPerView: 3.6,
+            slidesPerView: 3.3,
             spaceBetween: 16,
           },
         }}>
         {trendingMovies.map((movie) => (
-          <SwiperSlide>
+          <SwiperSlide className="swiper">
             <TrendingCard
               image={movie.thumbnail.trending.small}
               year={movie.year}
