@@ -6,6 +6,7 @@ import {
   StandardCard,
   StandardCardContainer,
   Search,
+  NoItems,
 } from '../components'
 import useStore from '../store'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -69,18 +70,22 @@ function Home() {
         ))}
       </Swiper>
       <SectionTitle text="Recomended for you" />
-      <StandardCardContainer>
-        {displayedMovies.map((item, index) => (
-          <StandardCard
-            image={item.thumbnail.regular.small}
-            title={item.title}
-            isBookmarked={item.isBookmarked}
-            category={item.category}
-            year={item.year}
-            index={index}
-          />
-        ))}
-      </StandardCardContainer>
+      {displayedMovies.length > 0 ? (
+        <StandardCardContainer>
+          {displayedMovies.map((item, index) => (
+            <StandardCard
+              image={item.thumbnail.regular.small}
+              title={item.title}
+              isBookmarked={item.isBookmarked}
+              category={item.category}
+              year={item.year}
+              index={index}
+            />
+          ))}
+        </StandardCardContainer>
+      ) : (
+        <NoItems message="No results to match your search" />
+      )}
     </PageWrapper>
   )
 }

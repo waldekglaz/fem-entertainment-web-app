@@ -1,8 +1,9 @@
-import React from "react";
-import styles from "./NoItems.module.css";
-
-function NoItems() {
-  return <div className="noItems">There is no items</div>;
+import styles from './NoItems.module.css'
+type NoItemsProps = {
+  message: string
+}
+function NoItems({ message }: NoItemsProps) {
+  return <div className={styles.noItems}>{message}</div>
 }
 
-export default NoItems;
+export default NoItems

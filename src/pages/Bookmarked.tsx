@@ -20,7 +20,7 @@ function Bookmarked() {
     <PageWrapper>
       <SectionTitle text="Bookmarked Movies" />
       {bookmarkedMovies.length === 0 ? (
-        <NoItems />
+        <NoItems message="No Bookmarked Movies" />
       ) : (
         <StandardCardContainer>
           {bookmarkedMovies.map((item, index) => (
@@ -38,7 +38,7 @@ function Bookmarked() {
 
       <SectionTitle text="Bookmarked TV Series" />
       {bookmarkedTvSeries.length === 0 ? (
-        <NoItems />
+        <NoItems message="No Bookmarked TV Series" />
       ) : (
         <StandardCardContainer>
           {bookmarkedTvSeries.map((item, index) => (

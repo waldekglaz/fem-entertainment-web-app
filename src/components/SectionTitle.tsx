@@ -1,12 +1,11 @@
-import React from "react";
-import styles from "./SectionTitle.module.css";
+import styles from './SectionTitle.module.css'
 
 type SectionTitleProps = {
-  text: string;
-};
-
-function SectionTitle({ text }: SectionTitleProps) {
-  return <h2 className={styles.title}>{text}</h2>;
+  text: string
 }
 
-export default SectionTitle;
+function SectionTitle({ text }: SectionTitleProps) {
+  return <h2 className={styles.title}>{text}</h2>
+}
+
+export default SectionTitle
