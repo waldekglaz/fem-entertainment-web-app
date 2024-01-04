@@ -54,7 +54,7 @@ function Home() {
             spaceBetween: 16,
           },
         }}>
-        {trendingMovies.map((movie) => (
+        {trendingMovies.map((movie, index) => (
           <SwiperSlide className="swiper">
             <TrendingCard
               image={movie.thumbnail.trending.small}
@@ -63,19 +63,21 @@ function Home() {
               title={movie.title}
               isBookmarked={movie.isBookmarked}
               category={movie.category}
+              index={index}
             />
           </SwiperSlide>
         ))}
       </Swiper>
       <SectionTitle text="Recomended for you" />
       <StandardCardContainer>
-        {displayedMovies.map((item) => (
+        {displayedMovies.map((item, index) => (
           <StandardCard
             image={item.thumbnail.regular.small}
             title={item.title}
             isBookmarked={item.isBookmarked}
             category={item.category}
             year={item.year}
+            index={index}
           />
         ))}
       </StandardCardContainer>

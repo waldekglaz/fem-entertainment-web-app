@@ -6,6 +6,7 @@ import CategoryMovie from '../assets/icon-category-movie.svg'
 import CategoryTvSeries from '../assets/icon-category-tv.svg'
 import PlayIcon from '../assets/icon-play.svg'
 import { CardProps } from './TrendingCard'
+import { motion } from 'framer-motion'
 
 function StandardCard({
   image,
@@ -13,10 +14,15 @@ function StandardCard({
   isBookmarked,
   category,
   year,
+  index,
 }: CardProps) {
   const { toggleBookmarked } = useStore()
   return (
-    <div className={styles.card}>
+    <motion.div
+      className={styles.card}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: index * 0.1 }}>
       <div className={styles.cardImageContainer}>
         <img src={image} alt={title} className={styles.cardImg} />
         <button
@@ -45,7 +51,7 @@ function StandardCard({
         <span>{category}</span>
       </div>
       <h3 className={styles.title}>{title}</h3>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,21 +1,20 @@
-import React from "react";
-import PageWrapper from "../components/PageWrapper";
-import useStore from "../store";
+import PageWrapper from '../components/PageWrapper'
+import useStore from '../store'
 import {
   StandardCard,
   StandardCardContainer,
   SectionTitle,
   NoItems,
-} from "../components";
+} from '../components'
 
 function Bookmarked() {
-  const { movies } = useStore();
+  const { movies } = useStore()
   const bookmarkedMovies = movies
-    .filter((item) => item.category === "Movie")
-    .filter((movie) => movie.isBookmarked);
+    .filter((item) => item.category === 'Movie')
+    .filter((movie) => movie.isBookmarked)
   const bookmarkedTvSeries = movies
-    .filter((item) => item.category === "TV Series")
-    .filter((series) => series.isBookmarked);
+    .filter((item) => item.category === 'TV Series')
+    .filter((series) => series.isBookmarked)
 
   return (
     <PageWrapper>
@@ -24,13 +23,14 @@ function Bookmarked() {
         <NoItems />
       ) : (
         <StandardCardContainer>
-          {bookmarkedMovies.map((item) => (
+          {bookmarkedMovies.map((item, index) => (
             <StandardCard
               image={item.thumbnail.regular.small}
               title={item.title}
               isBookmarked={item.isBookmarked}
               category={item.category}
               year={item.year}
+              index={index}
             />
           ))}
         </StandardCardContainer>
@@ -41,19 +41,20 @@ function Bookmarked() {
         <NoItems />
       ) : (
         <StandardCardContainer>
-          {bookmarkedTvSeries.map((item) => (
+          {bookmarkedTvSeries.map((item, index) => (
             <StandardCard
               image={item.thumbnail.regular.small}
               title={item.title}
               isBookmarked={item.isBookmarked}
               category={item.category}
               year={item.year}
+              index={index}
             />
           ))}
         </StandardCardContainer>
       )}
     </PageWrapper>
-  );
+  )
 }
 
-export default Bookmarked;
+export default Bookmarked
