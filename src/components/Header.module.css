@@ -20,7 +20,7 @@
 .nav img:hover {
   filter: brightness(300%);
 }
-.header nav a.active img {
+.header nav a[class="active"] img {
   filter: brightness(300%);
 }
 .avatar {
