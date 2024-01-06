@@ -31,7 +31,7 @@ function Home() {
       />
       <SectionTitle text="Trending" />
       <Swiper
-        slidesPerView={1.6}
+        slidesPerView={1.3}
         breakpoints={{
           768: {
             slidesPerView: 1.3,
