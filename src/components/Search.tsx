@@ -1,13 +1,14 @@
-import SearchIcon from '../assets/icon-search.svg'
-import styles from './Search.module.css'
-import { ChangeEvent } from 'react'
+import SearchIcon from "../assets/icon-search.svg";
+import styles from "./Search.module.css";
+import { ChangeEvent } from "react";
 
 interface SearchProps {
-  value: string
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  value: string;
+  placeholder: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function Search({ value, onChange }: SearchProps) {
+function Search({ value, onChange, placeholder }: SearchProps) {
   return (
     <div className={styles.search}>
       <img src={SearchIcon} alt="search" />
@@ -15,10 +16,10 @@ function Search({ value, onChange }: SearchProps) {
         type="text"
         value={value}
         onChange={onChange}
-        placeholder="Search for movies or TV series"
+        placeholder={placeholder}
       />
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

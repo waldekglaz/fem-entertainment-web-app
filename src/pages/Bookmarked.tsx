@@ -1,20 +1,21 @@
-import PageWrapper from '../components/PageWrapper'
-import useStore from '../store'
+import PageWrapper from "../components/PageWrapper";
+import useStore from "../store";
+
 import {
   StandardCard,
   StandardCardContainer,
   SectionTitle,
   NoItems,
-} from '../components'
+} from "../components";
 
 function Bookmarked() {
-  const { movies } = useStore()
+  const { movies } = useStore();
   const bookmarkedMovies = movies
-    .filter((item) => item.category === 'Movie')
-    .filter((movie) => movie.isBookmarked)
+    .filter((item) => item.category === "Movie")
+    .filter((movie) => movie.isBookmarked);
   const bookmarkedTvSeries = movies
-    .filter((item) => item.category === 'TV Series')
-    .filter((series) => series.isBookmarked)
+    .filter((item) => item.category === "TV Series")
+    .filter((series) => series.isBookmarked);
 
   return (
     <PageWrapper>
@@ -54,7 +55,7 @@ function Bookmarked() {
         </StandardCardContainer>
       )}
     </PageWrapper>
-  )
+  );
 }
 
-export default Bookmarked
+export default Bookmarked;

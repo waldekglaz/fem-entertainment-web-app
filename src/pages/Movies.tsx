@@ -3,18 +3,31 @@ import {
   SectionTitle,
   PageWrapper,
   StandardCard,
-} from '../components'
-import useStore from '../store'
+  Search,
+} from "../components";
+import useSearch from "../hooks/useSearch";
+import useStore from "../store";
 
 function Movies() {
-  const { movies } = useStore()
-  const moviesOnly = movies.filter((item) => item.category === 'Movie')
+  const { movies } = useStore();
+  const moviesOnly = movies.filter((item) => item.category === "Movie");
+
+  const { onSearch, userInput, searchedItems } = useSearch({
+    initialState: movies,
+  });
+
+  const displayedMovies = userInput ? searchedItems : moviesOnly;
 
   return (
     <PageWrapper>
+      <Search
+        onChange={(e) => onSearch(e.target.value)}
+        value={userInput}
+        placeholder="Search for Movies"
+      />
       <SectionTitle text="Movies" />
       <StandardCardContainer>
-        {moviesOnly.map((item, index) => (
+        {displayedMovies.map((item, index) => (
           <StandardCard
             image={item.thumbnail.regular.small}
             title={item.title}
@@ -26,7 +39,7 @@ function Movies() {
         ))}
       </StandardCardContainer>
     </PageWrapper>
-  )
+  );
 }
 
-export default Movies
+export default Movies;

@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import useSearch from "../hooks/useSearch";
 import PageWrapper from "../components/PageWrapper";
 import {
   SectionTitle,
@@ -11,31 +11,24 @@ import {
 import useStore from "../store";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Movie } from "../store";
 
 function Home() {
   const { movies } = useStore();
   const trendingMovies = movies.filter((movie) => movie.isTrending);
 
-  const [userInput, setUserInput] = useState("");
+  const { userInput, searchedItems, onSearch } = useSearch({
+    initialState: movies,
+  });
 
-  const [searchedMovies, setSearchedMovies] = useState<Movie[]>([]);
-
-  const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value;
-    setUserInput(inputValue);
-
-    const searchedResults = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    setSearchedMovies(searchedResults);
-  };
-
-  const displayedMovies = userInput ? searchedMovies : movies;
+  const displayedMovies = userInput ? searchedItems : movies;
 
   return (
     <PageWrapper>
-      <Search onChange={onSearch} value={userInput} />
+      <Search
+        onChange={(e) => onSearch(e.target.value)}
+        value={userInput}
+        placeholder="Search for Movies or TV series"
+      />
       <SectionTitle text="Trending" />
       <Swiper
         slidesPerView={1.6}
